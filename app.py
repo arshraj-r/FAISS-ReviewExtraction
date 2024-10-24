@@ -64,6 +64,7 @@ if st.button("Search"):
             st.write(f"**Review {i+1}:** {review_text}")
             if show_scores:
                 st.write(f"**Similarity score:** {D[0][i]:.4f}")
+                st.markdown("---")
         if st.button("Download CSV"):
             
             d={"Query":[query]*len(D[0]),"Distance":D[0], "Index":I[0]}
