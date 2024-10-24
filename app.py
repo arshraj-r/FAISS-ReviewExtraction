@@ -12,13 +12,13 @@ def load_faiss_index(index_path="playstore_reviews.index", data_path="faiss-inde
 
     # Load the FAISS index from the file
     index = faiss.read_index(index_path)
-    st.write(f"FAISS index loaded from {index_path}")
+    st.write(f"FAISS index loaded, contains {index.ntotal} indicies")
     
     # Load the data into a Pandas DataFrame
     data = pd.read_csv(data_path)
     data.rename(columns={"Unnamed: 0":"Index"},inplace=True)
     data.set_index("Index",inplace=True)
-    st.write(f"Data loaded from {data_path}, containing {len(data)} records.")
+    st.write(f"Data loaded from table, containing {len(data)} records.")
     
     return index, data
 
